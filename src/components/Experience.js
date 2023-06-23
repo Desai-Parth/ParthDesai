@@ -64,17 +64,6 @@ const Experience = () => {
               I work with various technologies and programming languages to ensure seamless 
               integration and deliver user-friendly and efficient solutions to our clients."
             />
-            {/* <Details
-              position="Full stack trainee"
-              companyLink="https://www.staunchsys.com/"
-              company="Staunchsys"
-              time="2023 - Present"
-              address="410-413, Aaron Spectra, Ahmedabad, Gujarat 380054"
-              work="As a full stack trainee at StaunchSys, I am responsible for developing 
-              and maintaining both the front-end and back-end aspects of our web applications. 
-              I work with various technologies and programming languages to ensure seamless 
-              integration and deliver user-friendly and efficient solutions to our clients."
-            /> */}
           </ul>
         </div>
       </div>

@@ -36,7 +36,7 @@ const Education = () => {
   });
   return (
     <>
-      <div className="my-64 md:my-32 xs:my-16">
+      <div className="my-64 md:my-32 xs:mt-16 xs:mb-80">
         <h2 className="font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16">
           Education
         </h2>
@@ -55,7 +55,7 @@ const Education = () => {
             <Details
               type="higher secondary"
               time="2018-2019"
-              place="Smt, Shantaben Haribhai, Amreli"
+              place="Smt. Shantaben Haribhai Gajera, Amreli"
               //   info="dgiudgig"
             />
             <Details

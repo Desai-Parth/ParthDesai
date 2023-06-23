@@ -76,7 +76,11 @@ const about = () => {
                 Biography
               </h2>
               <p className="font-medium">
-                {` Hello, I'm Parth Desai, a full stack developer specializing in React.js, Node.js, MongoDB, and Next.js. 
+                {` Hello, I'm `}
+                <strong class="font-bold text-dark/75 dark:text-white">
+                  Parth Desai,
+                </strong>
+                {` a full stack developer specializing in ReactJS, NodeJS, MongoDB, ExpessJS and NextJS. 
                 Currently, I am in the learning phase and gaining valuable experience in the field of web development and 
                 UI/UX design. I have a strong passion for creating visually appealing and user-centered digital experiences 
                 that not only solve problems but also provide intuitive and enjoyable interactions for users.`}

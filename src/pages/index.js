@@ -34,16 +34,10 @@ export default function Home() {
                 text="Turning Vision Into Reality With Code And Design."
                 className="!text-6xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl"
               />
-              {/* <p className="my-4 text-base font-medium md:text-sm sm:text-xs">
-                As a skilled full-stack developer, I am dedicated to turning
-                ideas into innovative web applications. Explore my latest
-                projects and articles, showcasing my expertise in React.js and
-                web development.
-              </p> */}
               <p className="my-4 text-base font-medium md:text-sm sm:text-xs">
                 As a full-stack developer, I am currently in the learning phase
-                and gaining valuable experience in React.js, Node.js, MongoDB,
-                Express, and Next.js. I am dedicated to honing my skills and
+                and gaining valuable experience in ReactJS, NodeJS, MongoDB,
+                ExpressJS, and NextJS. I am dedicated to honing my skills and
                 turning ideas into functional web applications. While I am still
                 expanding my knowledge, I am enthusiastic about taking on new
                 challenges and contributing to innovative projects in the field

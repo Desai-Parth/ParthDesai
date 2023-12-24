@@ -52,9 +52,10 @@ const Skills = () => {
         <Skill name="Github" x="-36vw" y="-5vw" />
         <Skill name="Bootstrap" x="-25vw" y="18vw" />
         <Skill name="Tailwind CSS" x="18vw" y="18vw" />
+        <Skill name="Nest Js" x="32vw" y="12vw" />
+        <Skill name="TimeScale DB" x="07vw" y="24vw" />
       </div>
     </>
   );
 };
-
 export default Skills;

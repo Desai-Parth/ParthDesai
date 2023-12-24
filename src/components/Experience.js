@@ -57,12 +57,20 @@ const Experience = () => {
               position="Full stack trainee"
               companyLink="https://www.staunchsys.com/"
               company="Staunchsys"
-              time="2023 - Present"
+              time="Jan 2023 - July 2023"
               address="410-413, Aaron Spectra, Ahmedabad, Gujarat 380054"
               work="As a full stack trainee at StaunchSys, I am responsible for developing 
               and maintaining both the front-end and back-end aspects of our web applications. 
               I work with various technologies and programming languages to ensure seamless 
               integration and deliver user-friendly and efficient solutions to our clients."
+            />
+            <Details
+              position="Full stack devloper"
+              companyLink="https://www.staunchsys.com/"
+              company="Staunchsys"
+              time="July 2023 - Present"
+              address="410-413, Aaron Spectra, Ahmedabad, Gujarat 380054"
+              work="In my role as a full stack developer at StaunchSys, I handle the creation and upkeep of both the front-end and back-end components in our web applications. I utilize a diverse set of technologies and programming languages to guarantee smooth connections and provide clients with user-friendly, effective solutions."
             />
           </ul>
         </div>

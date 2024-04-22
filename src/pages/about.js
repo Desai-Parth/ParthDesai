@@ -2,7 +2,7 @@ import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import React, { useEffect, useRef } from "react";
-import profilePic from "../../public/images/profile/profile-pic-2.png";
+import profilePic from "../../public/images/profile/profile-pic-2.jpg";
 import Image from "next/image";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 import Skills from "@/components/Skills";
@@ -80,7 +80,7 @@ const about = () => {
                 <strong class="font-bold text-dark/75 dark:text-white">
                   Parth Desai,
                 </strong>
-                {` a full stack developer specializing in ReactJS, NodeJS, MongoDB, ExpessJS and NextJS. 
+                {` a full stack developer specializing in ReactJS, NodeJS, MongoDB, ExpessJS/HapiJs, Nest Js and NextJS. 
                 Currently, I am in the learning phase and gaining valuable experience in the field of web development and 
                 UI/UX design. I have a strong passion for creating visually appealing and user-centered digital experiences 
                 that not only solve problems but also provide intuitive and enjoyable interactions for users.`}

@@ -44,16 +44,19 @@ const Skills = () => {
         <Skill name="CSS" x="-5vw" y="-11vw" />
         <Skill name="JavaScript" x="20vw" y="6vw" />
         <Skill name="ReactJS" x="0vw" y="12vw" />
-        <Skill name="NextJs" x="-20vw" y="-15vw" />
+        <Skill name="NextJs" x="-22vw" y="-20vw" />
         <Skill name="MongoDB" x="15vw" y="-12vw" />
-        <Skill name="SQL" x="30vw" y="-20vw" />
+        <Skill name="MySQL" x="30vw" y="-20vw" />
         <Skill name="ExpressJS" x="32vw" y="-5vw" />
         <Skill name="NodeJS" x="0vw" y="-20vw" />
         <Skill name="Github" x="-36vw" y="-5vw" />
-        <Skill name="Bootstrap" x="-25vw" y="18vw" />
+        <Skill name="Bootstrap" x="-26vw" y="20vw" />
         <Skill name="Tailwind CSS" x="18vw" y="18vw" />
-        <Skill name="Nest Js" x="32vw" y="12vw" />
+        <Skill name="Nest Js" x="-20vw" y="-10vw" />
+        <Skill name="HapiJs" x="32vw" y="12vw" />
         <Skill name="TimeScale DB" x="07vw" y="24vw" />
+        <Skill name="Apache Tomcat" x="-35vw" y="9vw" />
+        <Skill name="MUI / Ant Design" x="-15vw" y="15vw" />
       </div>
     </>
   );

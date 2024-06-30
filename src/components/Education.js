@@ -36,36 +36,31 @@ const Education = () => {
   });
   return (
     <>
-      <div className="my-64 md:my-32 xs:mt-16 xs:mb-80">
-        <h2 className="font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16">
-          Education
-        </h2>
-        <div ref={ref} className="w-[75%] m-auto relative lg:w-[90%] md:w-full">
-          <motion.div
-            style={{ scaleY: scrollYProgress }}
-            className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light md:w-[2px] md:left-[30px] xs:left-[20px]"
+      <h2 className="font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16">
+        Education
+      </h2>
+      <div ref={ref} className="w-[75%] m-auto relative lg:w-[90%] md:w-full">
+        <motion.div
+          style={{ scaleY: scrollYProgress }}
+          className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light md:w-[2px] md:left-[30px] xs:left-[20px]"
+        />
+        <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
+          <Details
+            type="secondary"
+            time="2016-2017"
+            place="Omkar Vidhyalaya, Amreli"
           />
-          <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
-            <Details
-              type="secondary"
-              time="2016-2017"
-              place="Omkar Vidhyalaya, Amreli"
-              //   info="dgiudgig"
-            />
-            <Details
-              type="higher secondary"
-              time="2018-2019"
-              place="Smt. Shantaben Haribhai Gajera, Amreli"
-              //   info="dgiudgig"
-            />
-            <Details
-              type="bachelor of technology in computer science and engineering"
-              time="2019-2023"
-              place="parul university, vadodara"
-              //   info="dgiudgig"
-            />
-          </ul>
-        </div>
+          <Details
+            type="higher secondary"
+            time="2018-2019"
+            place="Smt. Shantaben Haribhai Gajera, Amreli"
+          />
+          <Details
+            type="bachelor of technology in computer science and engineering"
+            time="2019-2023"
+            place="parul university, vadodara"
+          />
+        </ul>
       </div>
     </>
   );

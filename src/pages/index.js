@@ -36,8 +36,8 @@ export default function Home() {
               />
               <p className="my-4 text-base font-medium md:text-sm sm:text-xs">
                 As a full-stack developer, I am currently in the learning phase
-                and gaining valuable experience in ReactJS, NodeJS, MongoDB,
-                ExpressJS, and NextJS. I am dedicated to honing my skills and
+                and gaining valuable experience in ReactJS, NextJS, NodeJS, ExpressJS, NestJs, MongoDB,
+                and MySQL. I am dedicated to honing my skills and
                 turning ideas into functional web applications. While I am still
                 expanding my knowledge, I am enthusiastic about taking on new
                 challenges and contributing to innovative projects in the field

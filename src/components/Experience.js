@@ -1,6 +1,8 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll } from "framer-motion";
 import LiIcon from "./LiIcon";
+import axiosInstance from "@/utils/axiosInstance";
+import { Skeleton } from "antd";
 
 const Details = ({ position, company, companyLink, time, address, work }) => {
   const ref = useRef(null);
@@ -41,6 +43,25 @@ const Experience = () => {
     target: ref,
     offset: ["start end", "center start"],
   });
+  const [experiences, setExperiences] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await axiosInstance.get("/api/experiences");
+        setTimeout(() => {
+          setExperiences(response.experiences);
+          setLoading(false);
+        }, 2000);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
   return (
     <>
       <div className="my-64 md:my-32 xs:my-16">
@@ -48,31 +69,43 @@ const Experience = () => {
           Experience
         </h2>
         <div ref={ref} className="w-[75%] m-auto relative lg:w-[90%] md:w-full">
-          <motion.div
-            style={{ scaleY: scrollYProgress }}
-            className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light md:w-[2px] md:left-[30px] xs:left-[20px]"
-          />
-          <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
-            <Details
-              position="Full stack trainee"
-              companyLink="https://www.staunchsys.com/"
-              company="Staunchsys"
-              time="Jan 2023 - July 2023"
-              address="410-413, Aaron Spectra, Ahmedabad, Gujarat 380054"
-              work="As a full stack trainee at StaunchSys, I am responsible for developing 
-              and maintaining both the front-end and back-end aspects of our web applications. 
-              I work with various technologies and programming languages to ensure seamless 
-              integration and deliver user-friendly and efficient solutions to our clients."
-            />
-            <Details
-              position="Full stack devloper"
-              companyLink="https://www.staunchsys.com/"
-              company="Staunchsys"
-              time="July 2023 - Present"
-              address="410-413, Aaron Spectra, Ahmedabad, Gujarat 380054"
-              work="In my role as a full stack developer at StaunchSys, I handle the creation and upkeep of both the front-end and back-end components in our web applications. I utilize a diverse set of technologies and programming languages to guarantee smooth connections and provide clients with user-friendly, effective solutions."
-            />
-          </ul>
+          {loading ? (
+            // Show Skeleton Loader
+            <>
+              {[1, 2, 3].map((_, index) => (
+                <li
+                  key={index}
+                  className="my-8 first:mt-0 last:mb-0 w-[80%] mx-auto md:w-[100%]"
+                >
+                  <Skeleton
+                    active
+                    title={{ width: "60%" }}
+                    paragraph={{ rows: 4 }}
+                  />
+                </li>
+              ))}
+            </>
+          ) : (
+            <>
+              <motion.div
+                style={{ scaleY: scrollYProgress }}
+                className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light md:w-[2px] md:left-[30px] xs:left-[20px]"
+              />
+              <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
+                {experiences.map((experience) => (
+                  <Details
+                    key={experience._id}
+                    position={experience.position}
+                    companyLink={experience.companyLink}
+                    company={experience.company}
+                    time={experience.time}
+                    address={experience.address}
+                    work={experience.work}
+                  />
+                ))}
+              </ul>
+            </>
+          )}
         </div>
       </div>
     </>

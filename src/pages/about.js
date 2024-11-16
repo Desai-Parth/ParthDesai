@@ -1,7 +1,7 @@
 import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
 import Head from "next/head";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import profilePic from "../../public/images/profile/profile-pic-2.jpg";
 import Image from "next/image";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
@@ -9,11 +9,12 @@ import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import TransitionEffect from "@/components/TransitionEffect";
+import axiosInstance from "@/utils/axiosInstance";
 
 const AnimatedNumbers = ({ value }) => {
   const ref = useRef(null);
   const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, { duration: 3000 });
+  const springValue = useSpring(motionValue, { duration: 5000 });
   const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
@@ -56,11 +57,33 @@ const AnimatedYears = ({ value }) => {
   return <spna ref={ref}></spna>;
 };
 
-const about = () => {
+const About = () => {
+  const [profileSatisfied, setProfileSatisfied] = useState({
+    satisfiedClients: 0,
+    projectsCompleted: 0,
+  });
+  const [isImageLoading, setIsImageLoading] = useState(true);
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const response = await axiosInstance.get("/api/profile");
+
+        setProfileSatisfied({
+          satisfiedClients: response.profiles[0].satisfiedClients,
+          projectsCompleted: response.profiles[0].projectsCompleted,
+        });
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      }
+    };
+
+    fetchProfile();
+  }, []);
+
   return (
     <>
       <Head>
-        <title>ParthDesai | About Page</title>
+        <title>About | Parth-Desai</title>
         <meta name="description" content="ParthDesai | About Page" />
       </Head>
       <TransitionEffect />
@@ -77,7 +100,7 @@ const about = () => {
               </h2>
               <p className="font-medium">
                 {` Hello, I'm `}
-                <strong class="font-bold text-dark/75 dark:text-white">
+                <strong className="font-bold text-dark/75 dark:text-white">
                   Parth Desai,
                 </strong>
                 {` a full stack developer specializing in ReactJS, NodeJS, MongoDB, ExpessJS/HapiJs, Nest Js and NextJS. 
@@ -114,7 +137,7 @@ const about = () => {
             <div className="col-span-2 flex flex-col items-end justify-between xl:col-span-8 xl:flex-row xl:items-center md:order-3">
               <div className="flex flex-col items-end justify-center xl:items-center">
                 <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-                  <AnimatedNumbers value={3} />+
+                  <AnimatedNumbers value={profileSatisfied.satisfiedClients} />+
                 </span>
                 <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm">
                   satisfied clients
@@ -122,7 +145,8 @@ const about = () => {
               </div>
               <div className="flex flex-col items-end justify-center xl:items-center">
                 <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-                  <AnimatedNumbers value={4} />+
+                  <AnimatedNumbers value={profileSatisfied.projectsCompleted} />
+                  +
                 </span>
                 <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm">
                   projects completed
@@ -153,4 +177,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;

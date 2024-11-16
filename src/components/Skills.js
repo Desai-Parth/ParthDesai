@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import axiosInstance from "@/utils/axiosInstance";
 
 const Skill = ({ name, x, y }) => {
   return (
@@ -20,6 +21,20 @@ const Skill = ({ name, x, y }) => {
 };
 
 const Skills = () => {
+  const [skills, setSkills] = useState([]);
+
+  useEffect(() => {
+    const fetchSkills = async () => {
+      try {
+        const response = await axiosInstance  .get("/api/skills");
+        setSkills(response.skills);
+      } catch (error) {
+        console.error("Error fetching skills:", error);
+      }
+    };
+
+    fetchSkills();
+  }, []);
   return (
     <>
       <h2 className="font-bold text-8xl mt-64 w-full text-center md:text-6xl xs:text-4xl md:mt-32 xs:mt-16">
@@ -40,23 +55,9 @@ const Skills = () => {
         >
           Web
         </motion.div>
-        <Skill name="HTML" x="-25vw" y="2vw" />
-        <Skill name="CSS" x="-5vw" y="-11vw" />
-        <Skill name="JavaScript" x="20vw" y="6vw" />
-        <Skill name="ReactJS" x="0vw" y="12vw" />
-        <Skill name="NextJs" x="-22vw" y="-20vw" />
-        <Skill name="MongoDB" x="15vw" y="-12vw" />
-        <Skill name="MySQL" x="30vw" y="-20vw" />
-        <Skill name="ExpressJS" x="32vw" y="-5vw" />
-        <Skill name="NodeJS" x="0vw" y="-20vw" />
-        <Skill name="Github" x="-36vw" y="-5vw" />
-        <Skill name="Bootstrap" x="-26vw" y="20vw" />
-        <Skill name="Tailwind CSS" x="18vw" y="18vw" />
-        <Skill name="Nest Js" x="-20vw" y="-10vw" />
-        <Skill name="HapiJs" x="32vw" y="12vw" />
-        <Skill name="TimeScale DB" x="07vw" y="24vw" />
-        <Skill name="Apache Tomcat" x="-35vw" y="9vw" />
-        <Skill name="MUI / Ant Design" x="-15vw" y="15vw" />
+        {skills.map((skill) => (
+          <Skill key={skill.name} name={skill.name} x={skill.x} y={skill.y} />
+        ))}
       </div>
     </>
   );

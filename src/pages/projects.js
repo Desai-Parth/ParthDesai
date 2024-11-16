@@ -2,12 +2,7 @@ import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import React, { useEffect, useRef } from "react";
-import profilePic from "../../public/images/profile/profile-pic-2.jpg";
-import Image from "next/image";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
-import Skills from "@/components/Skills";
-import Experience from "@/components/Experience";
-import Education from "@/components/Education";
 import TransitionEffect from "@/components/TransitionEffect";
 import Projects from "@/components/Projects";
 
@@ -61,7 +56,7 @@ const project = () => {
     return (
         <>
             <Head>
-                <title>ParthDesai | About Page</title>
+                <title>Project | Parth-Desai</title>
                 <meta name="description" content="ParthDesai | Projct Page" />
             </Head>
             <TransitionEffect />

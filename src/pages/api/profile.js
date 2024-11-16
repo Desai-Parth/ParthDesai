@@ -1,5 +1,5 @@
 import connectMongoDb from "@/lib/mongodb";
-import Profile from "@/models/Profile";
+import Profile from "@/models/profile";
 
 export default async function handler(request, response) {
   await connectMongoDb(); // Connect to the database

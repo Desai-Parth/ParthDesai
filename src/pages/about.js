@@ -59,8 +59,8 @@ const AnimatedYears = ({ value }) => {
 
 const About = () => {
   const [profileSatisfied, setProfileSatisfied] = useState({
-    satisfiedClients: 0,
-    projectsCompleted: 0,
+    satisfiedClients: 4,
+    projectsCompleted: 7,
   });
   const [isImageLoading, setIsImageLoading] = useState(true);
   useEffect(() => {

@@ -21,15 +21,134 @@ const Skill = ({ name, x, y }) => {
 };
 
 const Skills = () => {
-  const [skills, setSkills] = useState([]);
+  const [skills, setSkills] = useState([
+    {
+      _id: "673889af92401322de975659",
+      name: "HTML",
+      x: "-25vw",
+      y: "2vw",
+      __v: 0,
+    },
+    {
+      _id: "673889c992401322de97565b",
+      name: "CSS",
+      x: "-5vw",
+      y: "-11vw",
+      __v: 0,
+    },
+    {
+      _id: "673889d392401322de97565d",
+      name: "JavaScript",
+      x: "20vw",
+      y: "6vw",
+      __v: 0,
+    },
+    {
+      _id: "673889dd92401322de97565f",
+      name: "ReactJS",
+      x: "0vw",
+      y: "12vw",
+      __v: 0,
+    },
+    {
+      _id: "673889e692401322de975661",
+      name: "NextJs",
+      x: "-22vw",
+      y: "-20vw",
+      __v: 0,
+    },
+    {
+      _id: "673889ee92401322de975663",
+      name: "MongoDB",
+      x: "15vw",
+      y: "-12vw",
+      __v: 0,
+    },
+    {
+      _id: "673889f692401322de975665",
+      name: "MySQL",
+      x: "30vw",
+      y: "-20vw",
+      __v: 0,
+    },
+    {
+      _id: "673889ff92401322de975667",
+      name: "ExpressJS",
+      x: "32vw",
+      y: "-5vw",
+      __v: 0,
+    },
+    {
+      _id: "67388a0992401322de975669",
+      name: "NodeJS",
+      x: "0vw",
+      y: "-20vw",
+      __v: 0,
+    },
+    {
+      _id: "67388a0f92401322de97566b",
+      name: "Github",
+      x: "-36vw",
+      y: "-5vw",
+      __v: 0,
+    },
+    {
+      _id: "67388a1692401322de97566d",
+      name: "Bootstrap",
+      x: "-26vw",
+      y: "20vw",
+      __v: 0,
+    },
+    {
+      _id: "67388a1c92401322de97566f",
+      name: "Tailwind CSS",
+      x: "18vw",
+      y: "18vw",
+      __v: 0,
+    },
+    {
+      _id: "67388a2492401322de975671",
+      name: "Nest Js",
+      x: "-20vw",
+      y: "-10vw",
+      __v: 0,
+    },
+    {
+      _id: "67388a2d92401322de975673",
+      name: "HapiJs",
+      x: "32vw",
+      y: "12vw",
+      __v: 0,
+    },
+    {
+      _id: "67388a3692401322de975675",
+      name: "TimeScale DB",
+      x: "07vw",
+      y: "24vw",
+      __v: 0,
+    },
+    {
+      _id: "67388a4292401322de975677",
+      name: "Apache Tomcat",
+      x: "-35vw",
+      y: "9vw",
+      __v: 0,
+    },
+    {
+      _id: "67388a4e92401322de975679",
+      name: "MUI / Ant Design",
+      x: "-15vw",
+      y: "15vw",
+      __v: 0,
+    },
+  ]);
 
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const response = await axiosInstance  .get("/api/skills");
+        const response = await axiosInstance.get("/api/skills");
         setSkills(response.skills);
       } catch (error) {
-        console.error("Error fetching skills:", error);
       }
     };
 

@@ -43,7 +43,28 @@ const Experience = () => {
     target: ref,
     offset: ["start end", "center start"],
   });
-  const [experiences, setExperiences] = useState([]);
+  const [experiences, setExperiences] = useState([
+    {
+      _id: "6738bce904250012f6e38bb8",
+      position: "Full stack trainee",
+      company: "Staunchsys",
+      companyLink: "https://www.staunchsys.com/",
+      time: "Jan 2023 - July 2023",
+      address: "410-413, Aaron Spectra, Ahmedabad, Gujarat 380054",
+      work: "As a full stack trainee at Staunchsys, I am responsible for developing and maintaining both the front-end and back-end aspects of our web applications. I work with various technologies and programming languages to ensure seamless integration and deliver user-friendly and efficient solutions to our clients.",
+      __v: 0,
+    },
+    {
+      _id: "6738bd1404250012f6e38bba",
+      position: "Full stack devloper",
+      company: "Staunchsys",
+      companyLink: "https://www.staunchsys.com/",
+      time: "July 2023 - Present",
+      address: "410-413, Aaron Spectra, Ahmedabad, Gujarat 380054",
+      work: "In my role as a full stack developer at Staunchsys, I handle the creation and upkeep of both the front-end and back-end components in our web applications. I utilize a diverse set of technologies and programming languages to guarantee smooth connections and provide clients with user-friendly, effective solutions.",
+      __v: 0,
+    },
+  ]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -55,7 +76,6 @@ const Experience = () => {
           setLoading(false);
         }, 2000);
       } catch (error) {
-        console.error("Error fetching projects:", error);
         setLoading(false);
       }
     };
